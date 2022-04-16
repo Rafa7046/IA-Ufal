@@ -1,4 +1,4 @@
-from nodes import Nodes
+from Canibais_missionarios.nodes import Nodes
 
 def main():
     initial_state = [3, 3, 0, 0, 0]
