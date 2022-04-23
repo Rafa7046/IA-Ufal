@@ -1,6 +1,3 @@
-from ast import Pass
-
-
 class Nodes():
 
     def __init__(self, current_state, trace, operator=1):

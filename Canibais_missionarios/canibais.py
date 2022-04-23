@@ -1,4 +1,4 @@
-from Canibais_missionarios.nodes import Nodes
+from nodes import Nodes
 
 def main():
     initial_state = [3, 3, 0, 0, 0]
@@ -7,7 +7,6 @@ def main():
     first_node.generate_sons()
     border.append(first_node)
     for node in border:
-        # print(node.current_state)
         if node.current_state == [0,0,3,3,1]:
                 print(node.trace)
                 print(f"Caminho encontrado")
@@ -20,5 +19,3 @@ def main():
                 border.append(new_son)
 
 main()
-        
-
