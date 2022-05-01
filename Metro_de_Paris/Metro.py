@@ -2,13 +2,15 @@ from Metro_Grid import Metro_Grid
 
 class Metro():
     
-    def __init__(self, last_station, time, trace, operator):
+    def __init__(self, last_station, time, trace, operator, connections):
         self.operator = operator
         self.time = self.travel_time(time)
         self.last_station = last_station
         self.trace = trace
         self.trace.append(self.operator[1])
         self.sons = self.paths()
+        self.connections = connections
+        self.connections.append(self.operator[4])
 
     def get_current_station(self):
         return self.operator[1]
@@ -18,6 +20,9 @@ class Metro():
 
     def get_trace_value(self):
         return list(self.trace)
+
+    def get_connections_value(self):
+        return list(self.connections)
 
     def paths(self):
         metro_grid = Metro_Grid()

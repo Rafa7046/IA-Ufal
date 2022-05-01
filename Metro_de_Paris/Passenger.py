@@ -17,7 +17,7 @@ class Passenger():
                 if j == self.initial_station:
                     lines.append(i)
         for i in lines:
-            border.append(Metro(-1, 0, [], (-1, self.initial_station, 0, i)))
+            border.append(Metro(-1, 0, [], (-1, self.initial_station, 0, i, -1), []))
 
         return border
 
@@ -25,9 +25,9 @@ class Passenger():
         while self.border is not empty:
             metro = self.find_min()
             if metro.operator[1] == self.final_station:
-                    return (metro.trace, metro.time)
+                    return (metro.trace, metro.time, self.metro_connections(metro.connections))
             for i in metro.sons:
-                new_son = Metro(metro.get_current_station(), metro.get_current_time(), metro.get_trace_value(), i)
+                new_son = Metro(metro.get_current_station(), metro.get_current_time(), metro.get_trace_value(), i, metro.get_connections_value())
                 self.border.append(new_son)
             self.border.remove(metro)
 
@@ -39,3 +39,15 @@ class Passenger():
                 min = self.border[i].get_current_time()
                 index = i
         return self.border[index]
+
+    def metro_connections(self, connections_list):
+        connections = []
+        for i in connections_list:
+            if i != -1:
+                connections.append(i)
+        
+        return connections
+
+    def line_name(self, line):
+        names = ["azul", "vermelha", "verde", "amarela"]
+        return names[line]
