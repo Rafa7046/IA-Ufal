@@ -2,8 +2,8 @@
 
   # Atividade de IA
 
-    #Canibais e missionários
-      #Descrição
+    # Canibais e missionários
+      # Descrição
         Três missionários e três canibais estão em um lado do rio, juntamente com um
         barco que pode conter uma ou duas pessoas. Descubra um meio de fazer todos
         atravessarem o rio, sem deixar que um grupo de missionários de um lado fique em
@@ -15,11 +15,11 @@
 
         Não é necessário verificar estados repetidos já que estamos fazendo uma busca em largura
 
-    #Problema do metrô de Paris
+    # Problema do metrô de Paris
 
-      #Bibliotecas
+      # Bibliotecas
         Para esse problema foi utilizada a biblioteca numpy
-      #Descrição
+      # Descrição
         Suponha que queremos construir um sistema para auxiliar um usuário do metrô de
         Paris a saber o trajeto mais rápido entre a estação onde ele se encontra e a estação
         de destino. O usuário tem um painel com o mapa, podendo selecionar a sua estação
