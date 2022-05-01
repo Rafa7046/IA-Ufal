@@ -5,14 +5,13 @@ class Metro():
     def __init__(self, last_station, time, trace, operator):
         self.operator = operator
         self.time = self.travel_time(time)
-        self.current_line = self.operator[3]
         self.last_station = last_station
         self.trace = trace
-        self.trace.append(self.operator[0])
+        self.trace.append(self.operator[1])
         self.sons = self.paths()
 
     def get_current_station(self):
-        return self.operator[0]
+        return self.operator[1]
 
     def get_current_time(self):
         return self.time

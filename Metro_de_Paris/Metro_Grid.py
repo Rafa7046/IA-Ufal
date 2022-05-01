@@ -42,17 +42,13 @@ class Metro_Grid():
                         extra_time = 4
                     else:
                         extra_time = 0
-                    try:
+                    if k+1 < len(self.Lines[i]):
                         neighbors.append((self.Lines[i][k+1], extra_time, i))
-                    except:
-                        pass
-                    try:
+                    if k-1 >= 0:
                         neighbors.append((self.Lines[i][k-1], extra_time, i))
-                    except:
-                        pass
                 k += 1
         operators = []
         for i in neighbors:
-            if last_estation != i[0]:
+            if last_estation != i[0] or len(neighbors) == 1:
                 operators.append((estation, i[0], i[1], i[2]))
         return operators
