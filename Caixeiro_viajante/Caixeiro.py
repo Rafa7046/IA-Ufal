@@ -37,9 +37,7 @@ class Caixeiro:
                         temporary_border.append(new_son)
                 temporary_border.remove(path)
             counter += 1
-        for i in self.border:
-            print(i)
-        print("============================================")
+        return self.get_best_route()
 
 
     def find_min(self, path):
@@ -52,3 +50,17 @@ class Caixeiro:
                 min = path[i].get_current_distance()
                 index = i
         return path[index]
+
+    def get_best_route(self):
+        index = 0
+        counter = 0
+        smaller = self.border[0][1]
+        for path in self.border:
+            if path != -1:
+                if path[1] < smaller:
+                    smaller = path[1]
+                    index = counter
+            counter += 1
+
+        return self.border[index]
+        
