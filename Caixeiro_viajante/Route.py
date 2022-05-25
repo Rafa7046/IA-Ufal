@@ -35,11 +35,3 @@ class Route:
 
     def path_is_connected(self):
         return Map().is_connected(self.path, self.cities_visited)
-
-# x = Route(30, (1, 2), [], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1], 1)
-# for i in x.sons:
-#     print(i)
-
-
-    
-

@@ -1,8 +1,13 @@
 from Caixeiro import Caixeiro
 
-for i in range(1,11):
-    test = Caixeiro(i)
-    h = test.route()
+def main():
+    initial_city = int(input(f"Digite a cidade inicial como um número de 1 a 10: "))
+    caixeiro = Caixeiro(initial_city)
+    path = caixeiro.route()
+    print("\n----------------------------------------------------------------------------------------------------\n")
+    
+    print(f"O caminho mais curto é {path[0]} e levará {path[1]} quilômetros")
 
-# for x in range(9):
-#     print(test[x])
+    print("\n----------------------------------------------------------------------------------------------------\n")
+
+main()
